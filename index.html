@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta name="naver-site-verification" content="8b972ae170fec7ec959ac575099bff1041a3cfa5" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>페이브라운 - 인터랙티브 결제 솔루션 제안서</title>
@@ -81,7 +80,7 @@
             <div class="hidden md:flex space-x-8">
                 <button onclick="document.getElementById('simulator').scrollIntoView({behavior:'smooth'})" class="text-gray-600 hover:text-primary-600 font-semibold transition">수수료 시뮬레이터</button>
                 <button onclick="document.getElementById('solutions').scrollIntoView({behavior:'smooth'})" class="text-gray-600 hover:text-primary-600 font-semibold transition">결제 솔루션</button>
-                <button onclick="document.getElementById('service-details').scrollIntoView({behavior:'smooth'})" class="text-gray-600 hover:text-primary-600 font-semibold transition">화면 미리보기</button>
+                <button onclick="document.getElementById('service-details').scrollIntoView({behavior:'smooth'})" class="text-gray-600 hover:text-primary-600 font-semibold transition">솔루션 도입 사례</button>
             </div>
             <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="hidden md:block bg-gray-900 hover:bg-gray-800 text-white px-6 py-2.5 rounded-lg font-bold transition">
                 빠른 가입 상담
@@ -91,20 +90,19 @@
 </nav>
 
 <main>
-    <section class="pt-16 md:pt-20 pb-20 md:pb-24 px-4 bg-gradient-to-b from-[#FAF8F5] to-white overflow-hidden">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+    <section class="pt-16 md:pt-20 pb-20 md:pb-24 px-4 bg-gradient-to-b from-[#FAF8F5] to-white overflow-hidden relative">
+        <!-- 전 결제 수단 무이자 할부 글로벌 배지 -->
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 mt-4 z-10 w-full text-center fade-in">
+            <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-red-50 text-red-600 font-black text-sm border-2 border-red-100 shadow-sm animate-pulse">
+                <span class="text-lg">💳</span> 전 결제 수단 무이자 할부 100% 지원!
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 mt-12">
             <div class="flex-1 text-center lg:text-left fade-in">
-                <!-- 글로벌 혜택 뱃지들 -->
-                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 mb-6">
-                    <div class="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-700 font-bold text-sm border border-primary-100">
-                        가입비 · 연회비 · 관리비 평생 면제
-                    </div>
-                    <!-- 무이자 할부 글로벌 강조 배지 추가 -->
-                    <div class="inline-block px-4 py-1.5 rounded-full bg-red-50 text-red-600 font-bold text-sm border border-red-100 shadow-sm animate-pulse">
-                        💳 전 결제 수단 무이자 할부 지원
-                    </div>
+                <div class="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-700 font-bold text-sm mb-6 border border-primary-100">
+                    가입비 · 연회비 · 관리비 평생 면제
                 </div>
-                
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 lg:mb-8 leading-tight tracking-tight">
                     숨겨진 비용 0원,<br>사장님은 <span class="text-primary-600">'결제'</span>만 신경 쓰세요.
                 </h1>
@@ -116,7 +114,7 @@
                         나의 월 절감액 계산해보기
                     </button>
                     <button onclick="document.getElementById('service-details').scrollIntoView({behavior:'smooth'})" class="bg-white hover:bg-gray-50 text-gray-800 border border-gray-200 px-8 py-4 rounded-xl font-bold text-lg transition shadow-sm">
-                        솔루션 화면 미리보기
+                        솔루션 도입 사례 보기
                     </button>
                 </div>
             </div>
@@ -211,12 +209,14 @@
                         <div class="text-gray-500 font-medium mb-1 mt-2">기존에 버려지던 월 비용</div>
                         <div class="text-xl font-bold text-gray-400 line-through decoration-gray-400 decoration-2" id="costTraditional">330,000원</div>
                     </div>
+                    
                     <div class="p-6 bg-primary-50 rounded-2xl border border-primary-200 relative transform hover:scale-105 transition-transform duration-300 shadow-md flex flex-col justify-center mt-4 md:mt-0">
                         <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary-600 text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap shadow-md border border-primary-500">페이브라운 최저 0.9% 적용 시</div>
                         <div class="absolute top-0 right-0 bg-primary-600 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-[15px]">SAVE</div>
                         <div class="text-primary-800 font-bold mb-2 mt-3">페이브라운으로 매월 아끼는 금액</div>
                         <div class="text-2xl md:text-3xl font-black text-primary-600" id="savingsMonth">240,000원</div>
                     </div>
+                    
                     <div class="p-6 bg-green-50 rounded-2xl border border-green-200 relative transform hover:scale-105 transition-transform duration-300 shadow-lg shadow-green-100/50 flex flex-col justify-center mt-4 md:mt-0">
                         <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap shadow-sm">가입비/연회비 평생 0원</div>
                         <div class="text-green-800 font-bold mb-2 mt-2">💰 1년이면 이만큼 추가 수익!</div>
@@ -234,41 +234,6 @@
         </div>
     </section>
 
-    <section id="benefits" class="py-24 bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold mb-4">모든 고민을 해결하는 단 하나의 솔루션</h2>
-                <p class="text-gray-400 text-lg">페이브라운은 오직 사장님의 성공만을 생각합니다.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-800 p-10 rounded-3xl text-center border border-gray-700 hover:border-gray-500 transition">
-                    <div class="emoji-icon bg-gray-700 mb-6 mx-auto">🎁</div>
-                    <h3 class="text-2xl font-bold mb-4">3無 혜택으로 비용 제로</h3>
-                    <p class="text-gray-400">초기 가입비, 매년 내는 연회비, 월 관리비까지 모두 평생 0원으로 부담 없이 시작하세요.</p>
-                </div>
-                <div class="bg-gray-800 p-10 rounded-3xl text-center border border-gray-700 hover:border-primary-500 transition relative">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary-600 text-white px-4 py-1 rounded-full text-sm font-bold">핵심 경쟁력</div>
-                    <div class="emoji-icon bg-gray-700 mb-6 mx-auto">📊</div>
-                    <h3 class="text-2xl font-bold mb-4">업종 맞춤 최저 수수료</h3>
-                    <p class="text-gray-400">최저 0.9% ~ 최대 2.9%의 업계 최저 수준 수수료를 사장님의 매출 규모에 맞게 제안합니다.</p>
-                </div>
-                <div class="bg-gray-800 p-10 rounded-3xl text-center border border-gray-700 hover:border-gray-500 transition">
-                    <div class="emoji-icon bg-gray-700 mb-6 mx-auto">⚡</div>
-                    <h3 class="text-2xl font-bold mb-4">D+3일 칼같은 정산</h3>
-                    <p class="text-gray-400">자금 회전율을 높여주는 빠르고 안정적인 정산 시스템으로 현금 흐름 걱정을 덜어드립니다.</p>
-                </div>
-            </div>
-
-            <div class="mt-20 glass-card bg-gray-800/50 p-8 rounded-3xl border-gray-700">
-                <h3 class="text-xl font-bold mb-6 text-center">정산 주기별 현금 확보 시뮬레이션 (1,000만원 결제 기준)</h3>
-                <div class="chart-container">
-                    <canvas id="settlementChart"></canvas>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="solutions" class="py-20 md:py-24 bg-white border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10 fade-in">
@@ -276,6 +241,7 @@
                 <p class="text-gray-500 text-lg">대표님의 업종을 선택하시면 딱 맞는 결제 솔루션을 추천해 드립니다.</p>
             </div>
 
+            <!-- 필터링 버튼 -->
             <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-12 fade-in animate-detailFadeIn">
                 <button class="filter-btn text-gray-600 border-gray-300 hover:border-primary-600 hover:text-primary-600 px-4 py-2 md:px-6 md:py-2.5 rounded-full border text-xs md:text-sm font-bold transition-colors bg-white shadow-sm" data-filter="reserve">화물 · 청소 · 예약</button>
                 <button class="filter-btn text-gray-600 border-gray-300 hover:border-primary-600 hover:text-primary-600 px-4 py-2 md:px-6 md:py-2.5 rounded-full border text-xs md:text-sm font-bold transition-colors bg-white shadow-sm" data-filter="tm">방문판매 · TM</button>
@@ -286,31 +252,31 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-start">
                 
-                <!-- 알림톡 결제 (강조) -->
-                <div class="solution-card cursor-pointer group bg-primary-600 text-white rounded-2xl p-6 border border-primary-500 shadow-[0_10px_30px_rgba(122,99,89,0.15)] hover:shadow-[0_15px_40px_rgba(122,99,89,0.25)] hover:-translate-y-1 transition-all duration-300 fade-in flex flex-col relative" style="transition-delay: 0.1s;" data-category="reserve" onclick="toggleSolutionCard(this, true)">
-                    <div class="absolute -top-3 -right-3 bg-gray-900 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md z-10 border border-gray-700">BEST</div>
-                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 text-xl">📱</div>
-                    <h3 class="text-lg font-bold mb-2">알림톡 결제</h3>
-                    <p class="text-xs text-primary-100 mb-4 leading-relaxed break-keep group-[.is-expanded]:text-sm">고객의 휴대폰으로 결제 링크를 발송하여 비대면으로 즉시 결제합니다.</p>
+                <!-- 1. 알림톡 결제 -->
+                <div class="solution-card cursor-pointer group bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 fade-in flex flex-col relative" data-category="reserve" onclick="toggleSolutionCard(this)">
+                    <div class="absolute -top-3 -right-3 bg-gray-900 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md z-10 border border-gray-700">POINT</div>
+                    <div class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-4 text-xl">📱</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">알림톡 결제</h3>
+                    <p class="text-xs text-gray-500 mb-4 leading-relaxed break-keep group-[.is-expanded]:text-sm">고객의 휴대폰으로 결제 링크를 발송하여 비대면으로 즉시 결제합니다.</p>
                     <div class="mt-auto flex justify-between items-center w-full">
-                        <span class="inline-block px-2 py-1 bg-white/20 text-[11px] text-white rounded-md font-bold">화물, 청소, 예약</span>
+                        <span class="inline-block px-2 py-1 bg-gray-50 text-[11px] text-gray-600 rounded-md font-bold group-[.is-expanded]:bg-primary-50 group-[.is-expanded]:text-primary-700">화물, 청소, 예약</span>
                         <div class="flex items-center gap-1">
-                            <span class="text-[10px] font-bold text-white bg-white/20 px-2 py-1 rounded group-[.is-expanded]:hidden">자세히 ▼</span>
-                            <span class="text-[10px] font-bold text-primary-200 bg-black/20 px-2 py-1 rounded hidden group-[.is-expanded]:block">접기 ▲</span>
+                            <span class="text-[10px] font-bold text-primary-600 bg-primary-50 px-2 py-1 rounded group-[.is-expanded]:hidden">자세히 ▼</span>
+                            <span class="text-[10px] font-bold text-gray-400 bg-gray-100 px-2 py-1 rounded hidden group-[.is-expanded]:block">접기 ▲</span>
                         </div>
                     </div>
-                    <div class="solution-details hidden mt-5 pt-5 border-t border-white/20 animate-detailFadeIn">
-                        <h4 class="font-bold text-white mb-2 text-sm flex items-center gap-2">✓ 주요 특장점</h4>
-                        <ul class="text-xs md:text-sm text-primary-50 space-y-1.5 mb-5">
-                            <li>• 친숙한 카카오톡이나 문자로 결제 청구서 다이렉트 발송</li>
-                            <li>• 고객은 번거로운 회원가입 없이 링크 클릭만으로 결제 완결</li>
-                            <li>• 노쇼 방지를 위한 예약금 수납 및 화물/청소 현장 결제에 탁월</li>
+                    <div class="solution-details hidden mt-5 pt-5 border-t border-gray-100 animate-detailFadeIn">
+                        <h4 class="font-bold text-gray-900 mb-2 text-sm flex items-center gap-2"><span class="text-primary-600">✓</span> 주요 특장점</h4>
+                        <ul class="text-xs md:text-sm text-gray-600 space-y-1.5 mb-5">
+                            <li>• 친숙한 카카오톡/문자로 결제 청구서 다이렉트 발송</li>
+                            <li>• 고객은 앱 설치 없이 링크 클릭만으로 결제 완결</li>
+                            <li>• 노쇼 방지를 위한 예약금 수납 및 출장 현장에 탁월</li>
                         </ul>
-                        <button onclick="event.stopPropagation(); document.getElementById('service-details').scrollIntoView({behavior:'smooth'})" class="w-full bg-white text-primary-800 hover:bg-gray-100 font-black py-2 rounded-lg transition-colors shadow-md text-sm">결제 화면 미리보기</button>
+                        <button onclick="event.stopPropagation(); document.getElementById('service-details').scrollIntoView({behavior:'smooth'})" class="w-full bg-primary-50 text-primary-700 hover:bg-primary-600 hover:text-white font-bold py-2 rounded-lg transition-colors border border-primary-100 shadow-sm text-sm">도입 사례 보기</button>
                     </div>
                 </div>
 
-                <!-- 수기 결제 -->
+                <!-- 2. 수기 결제 -->
                 <div class="solution-card cursor-pointer group bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 fade-in flex flex-col relative" data-category="tm" onclick="toggleSolutionCard(this)">
                     <div class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-4 text-xl">💳</div>
                     <h3 class="text-lg font-bold text-gray-900 mb-2">수기 결제</h3>
@@ -325,16 +291,16 @@
                     <div class="solution-details hidden mt-5 pt-5 border-t border-gray-100 animate-detailFadeIn">
                         <h4 class="font-bold text-gray-900 mb-2 text-sm flex items-center gap-2"><span class="text-primary-600">✓</span> 주요 특장점</h4>
                         <ul class="text-xs md:text-sm text-gray-600 space-y-1.5 mb-5">
-                            <li>• 실물 카드, 결제 단말기(리더기), 별도 앱 설치 불필요</li>
-                            <li>• 고객 전화 통화 중 실시간으로 1분 내 빠른 승인 가능</li>
-                            <li>• 원거리 고객 응대가 많은 B2B 도매 및 TM 업종에 최적화</li>
+                            <li>• 실물 카드, 결제 단말기, 별도 앱 설치 불필요</li>
+                            <li>• 고객 전화 통화 중 실시간으로 1분 내 승인 가능</li>
+                            <li>• 원거리 고객 응대가 많은 TM 업종에 최적화</li>
                         </ul>
-                        <button onclick="event.stopPropagation(); document.getElementById('service-details').scrollIntoView({behavior:'smooth'})" class="w-full bg-primary-50 text-primary-700 hover:bg-primary-600 hover:text-white font-bold py-2 rounded-lg transition-colors border border-primary-100 shadow-sm text-sm">화면 미리보기</button>
+                        <button onclick="event.stopPropagation(); document.getElementById('service-details').scrollIntoView({behavior:'smooth'})" class="w-full bg-primary-50 text-primary-700 hover:bg-primary-600 hover:text-white font-bold py-2 rounded-lg transition-colors border border-primary-100 shadow-sm text-sm">도입 사례 보기</button>
                     </div>
                 </div>
 
-                <!-- 정기 결제 -->
-                <div class="solution-card cursor-pointer group bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 fade-in flex flex-col relative" style="transition-delay: 0.2s;" data-category="sub" onclick="toggleSolutionCard(this)">
+                <!-- 3. 정기 결제 -->
+                <div class="solution-card cursor-pointer group bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 fade-in flex flex-col relative" data-category="sub" onclick="toggleSolutionCard(this)">
                     <div class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-4 text-xl">🔄</div>
                     <h3 class="text-lg font-bold text-gray-900 mb-2">정기 결제</h3>
                     <p class="text-xs text-gray-500 mb-4 leading-relaxed break-keep group-[.is-expanded]:text-sm">매월 약정된 지정 일자에 고객 카드에서 자동 승인됩니다.</p>
@@ -348,16 +314,16 @@
                     <div class="solution-details hidden mt-5 pt-5 border-t border-gray-100 animate-detailFadeIn">
                         <h4 class="font-bold text-gray-900 mb-2 text-sm flex items-center gap-2"><span class="text-primary-600">✓</span> 주요 특장점</h4>
                         <ul class="text-xs md:text-sm text-gray-600 space-y-1.5 mb-5">
-                            <li>• 최초 1회 고객 카드 등록 시 매월 약정된 일자에 자동 과금</li>
-                            <li>• 매달 결제를 재요청할 필요가 없어 미수금 방지 (0% 달성)</li>
-                            <li>• 안정적인 현금 흐름이 필수인 학원비, 렌탈비 비즈니스 필수</li>
+                            <li>• 최초 1회 카드 등록 시 매월 약정 일자 자동 과금</li>
+                            <li>• 매달 결제를 재요청할 필요가 없어 미수금 0% 달성</li>
+                            <li>• 안정적인 현금 흐름이 필수인 학원비, 렌탈비 비즈니스</li>
                         </ul>
-                        <button onclick="event.stopPropagation(); document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="w-full bg-primary-50 text-primary-700 hover:bg-primary-600 hover:text-white font-bold py-2 rounded-lg transition-colors border border-primary-100 shadow-sm text-sm">정기 결제 문의하기</button>
+                        <button onclick="event.stopPropagation(); document.getElementById('service-details').scrollIntoView({behavior:'smooth'})" class="w-full bg-primary-50 text-primary-700 hover:bg-primary-600 hover:text-white font-bold py-2 rounded-lg transition-colors border border-primary-100 shadow-sm text-sm">도입 사례 보기</button>
                     </div>
                 </div>
 
-                <!-- 링크 결제 -->
-                <div class="solution-card cursor-pointer group bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 fade-in flex flex-col relative" style="transition-delay: 0.3s;" data-category="sns" onclick="toggleSolutionCard(this)">
+                <!-- 4. 링크 결제 -->
+                <div class="solution-card cursor-pointer group bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 fade-in flex flex-col relative" data-category="sns" onclick="toggleSolutionCard(this)">
                     <div class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-4 text-xl">🔗</div>
                     <h3 class="text-lg font-bold text-gray-900 mb-2">링크 결제</h3>
                     <p class="text-xs text-gray-500 mb-4 leading-relaxed break-keep group-[.is-expanded]:text-sm">SNS, 블로그 게시글에 링크를 삽입하여 바로 결제받습니다.</p>
@@ -371,16 +337,17 @@
                     <div class="solution-details hidden mt-5 pt-5 border-t border-gray-100 animate-detailFadeIn">
                         <h4 class="font-bold text-gray-900 mb-2 text-sm flex items-center gap-2"><span class="text-primary-600">✓</span> 주요 특장점</h4>
                         <ul class="text-xs md:text-sm text-gray-600 space-y-1.5 mb-5">
-                            <li>• 상품별 고유 URL 링크를 생성하여 어디에나 간편 복사/붙여넣기</li>
-                            <li>• 복잡한 쇼핑몰 구축 과정 없이 즉시 온라인 판매 시작 가능</li>
-                            <li>• 인스타그램 공구, 블로그 마켓, 카페 게시글 판매에 최적화</li>
+                            <li>• 상품별 고유 URL 링크를 생성하여 어디에나 붙여넣기</li>
+                            <li>• 쇼핑몰 구축 과정 없이 즉시 온라인 판매 시작</li>
+                            <li>• 인스타그램 공구, 블로그 마켓 판매에 최적화</li>
                         </ul>
-                        <button onclick="event.stopPropagation(); document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="w-full bg-primary-50 text-primary-700 hover:bg-primary-600 hover:text-white font-bold py-2 rounded-lg transition-colors border border-primary-100 shadow-sm text-sm">링크 결제 문의하기</button>
+                        <button onclick="event.stopPropagation(); document.getElementById('service-details').scrollIntoView({behavior:'smooth'})" class="w-full bg-primary-50 text-primary-700 hover:bg-primary-600 hover:text-white font-bold py-2 rounded-lg transition-colors border border-primary-100 shadow-sm text-sm">도입 사례 보기</button>
                     </div>
                 </div>
 
-                <!-- 온라인 결제 (일반 화이트 톤) -->
-                <div class="solution-card cursor-pointer group bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 fade-in flex flex-col relative" style="transition-delay: 0.4s;" data-category="pg" onclick="toggleSolutionCard(this)">
+                <!-- 5. 온라인 결제 (PG) -->
+                <div class="solution-card cursor-pointer group bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 fade-in flex flex-col relative" data-category="pg" onclick="toggleSolutionCard(this)">
+                    <div class="absolute -top-3 -right-3 bg-gray-900 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md z-10 border border-gray-700">BEST</div>
                     <div class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-4 text-xl">🌐</div>
                     <h3 class="text-lg font-bold text-gray-900 mb-2">온라인 결제(PG)</h3>
                     <p class="text-xs text-gray-500 mb-4 leading-relaxed break-keep group-[.is-expanded]:text-sm">독립 쇼핑몰 전용 결제창 연동. 신용카드 등 모든 수단을 지원합니다.</p>
@@ -394,11 +361,11 @@
                     <div class="solution-details hidden mt-5 pt-5 border-t border-gray-100 animate-detailFadeIn">
                         <h4 class="font-bold text-gray-900 mb-2 text-sm flex items-center gap-2"><span class="text-primary-600">✓</span> 주요 특장점</h4>
                         <ul class="text-xs md:text-sm text-gray-600 space-y-1.5 mb-5">
-                            <li>• 자사몰(카페24, 아임웹 등) 결제 모듈 간편 플러그인 연동</li>
-                            <li>• 신용카드, 실시간 계좌이체, 가상계좌 등 다양한 통합 결제 지원</li>
-                            <li>• 직관적인 가맹점 관리자 페이지 제공으로 통합 매출 조회 편리</li>
+                            <li>• 자사몰 결제 모듈 간편 플러그인 연동</li>
+                            <li>• 신용카드, 계좌이체 등 다양한 통합 결제 지원</li>
+                            <li>• 직관적인 가맹점 관리자 페이지 제공으로 매출 조회 편리</li>
                         </ul>
-                        <button onclick="event.stopPropagation(); document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="w-full bg-primary-50 text-primary-700 hover:bg-primary-600 hover:text-white font-bold py-2 rounded-lg transition-colors border border-primary-100 shadow-sm text-sm">온라인 PG 문의하기</button>
+                        <button onclick="event.stopPropagation(); document.getElementById('service-details').scrollIntoView({behavior:'smooth'})" class="w-full bg-primary-50 text-primary-700 hover:bg-primary-600 hover:text-white font-bold py-2 rounded-lg transition-colors border border-primary-100 shadow-sm text-sm">도입 사례 보기</button>
                     </div>
                 </div>
 
@@ -410,10 +377,10 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-20 fade-in">
                 <span class="text-primary-600 font-bold tracking-wider text-sm uppercase mb-2 block">HOW IT WORKS</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">결제 솔루션 화면 파헤치기</h2>
-                <p class="text-gray-500 text-lg mb-6">고객과 사장님 모두가 편안한 최적의 결제 화면을 직접 확인하세요.</p>
-                <!-- 고객 이해를 돕기 위한 연출 이미지 고지 문구 -->
-                <div class="inline-block bg-gray-200/80 text-gray-600 text-xs font-bold px-4 py-2 rounded-lg border border-gray-200">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">결제 솔루션 도입 사례</h2>
+                <p class="text-gray-500 text-lg mb-6">페이브라운의 솔루션이 실제 비즈니스에 어떻게 적용되는지 확인하세요.</p>
+                <!-- 면책 조항 -->
+                <div class="inline-block bg-gray-200/80 text-gray-600 text-xs font-bold px-4 py-2 rounded-lg border border-gray-200 shadow-sm">
                     ※ 본 화면은 고객의 이해를 돕기 위해 연출된 이미지로, 실제 서비스 화면과 다를 수 있습니다.
                 </div>
             </div>
@@ -431,7 +398,6 @@
                             고객은 앱 설치 없이, 받은 메시지의 링크를 클릭하는 것만으로 1분 안에 결제를 완료할 수 있습니다.
                         </p>
                     </div>
-                    <!-- 알림톡 폰 UI (화이트 바탕, 노란색 포인트, '알림톡' 텍스트) -->
                     <div class="flex-1 order-1 md:order-2 flex justify-center fade-in">
                         <div class="phone-mockup bg-gray-50">
                             <div class="phone-notch"></div>
@@ -483,9 +449,6 @@
                                         <div class="text-xl font-black text-primary-700 text-right">50,000 원</div>
                                     </div>
                                 </div>
-                                <div class="mt-auto pb-4">
-                                    <button class="w-full bg-gray-900 text-white py-4 rounded-xl font-bold shadow-lg text-lg">승인 요청</button>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -498,7 +461,7 @@
                     </div>
                 </div>
 
-                <!-- 3. 정기 결제 (복구) -->
+                <!-- 3. 정기 결제 (구독) -->
                 <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
                     <div class="flex-1 order-2 md:order-1 text-center md:text-left fade-in">
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 font-bold text-xs mb-4">
@@ -512,7 +475,7 @@
                             <div class="phone-notch"></div>
                             <div class="p-5 pt-20 h-full flex flex-col items-center">
                                 <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-blue-500 text-3xl shadow-sm mb-4">🔄</div>
-                                <h4 class="font-bold text-gray-900 text-lg mb-1">정기결제 완료</h4>
+                                <h4 class="font-bold text-gray-900 text-lg mb-1">정기결제 승인 완료</h4>
                                 <p class="text-xs text-gray-500 mb-8">매월 5일 자동 승인 설정됨</p>
                                 <div class="w-full bg-white p-5 rounded-2xl shadow-sm space-y-4 text-sm">
                                     <div class="flex justify-between border-b border-gray-50 pb-3"><span class="text-gray-500">가맹점</span><span class="font-bold text-gray-800">OO어학원</span></div>
@@ -524,21 +487,31 @@
                     </div>
                 </div>
 
-                <!-- 4. 링크 결제 (복구) -->
+                <!-- 4. 링크 결제 (SNS 스타일 구현) -->
                 <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
                     <div class="flex-1 flex justify-center fade-in">
                         <div class="phone-mockup bg-white">
                             <div class="phone-notch"></div>
-                            <div class="p-0 h-full flex flex-col relative">
-                                <div class="px-4 pt-14 pb-3 border-b border-gray-100 flex items-center font-bold text-sm">@fashion_seller</div>
-                                <div class="h-64 bg-gray-100 w-full flex items-center justify-center text-gray-400">👗 봄 신상 아우터 이미지</div>
-                                <div class="p-4 text-sm space-y-2">
-                                    <p class="font-bold">fashion_seller</p>
-                                    <p class="text-gray-600">올 봄 필수템! 한정 수량 할인✨<br>아래 링크에서 바로 구매하세요👇</p>
-                                    <span class="text-blue-500 font-medium block mt-2">https://paybrown.link/item/123</span>
+                            <div class="h-full flex flex-col relative">
+                                <!-- 인스타 풍 헤더 -->
+                                <div class="px-4 pt-14 pb-3 border-b border-gray-100 flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center text-pink-500 text-xs font-bold border border-pink-200">F</div>
+                                    <span class="font-bold text-sm text-gray-900">fashion_seller</span>
                                 </div>
-                                <div class="absolute bottom-4 left-4 right-4">
-                                    <button class="w-full bg-pink-500 text-white py-3 rounded-xl font-bold shadow-md">링크 열고 결제하기</button>
+                                <!-- 실제 판매 상품 이미지 연출 (고화질 플레이스홀더 사용) -->
+                                <div class="h-64 w-full bg-cover bg-center relative" style="background-image: url('https://placehold.co/400x400/ffe4e6/ec4899?text=Spring+Collection');">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                                </div>
+                                <!-- 인스타 풍 본문 -->
+                                <div class="p-4 text-sm space-y-2 flex-1 bg-white">
+                                    <p class="text-gray-800 leading-tight"><span class="font-bold text-gray-900 mr-1">fashion_seller</span>올 봄 필수템! 🌸 한정 수량 할인 진행 중입니다.<br>아래 링크에서 바로 구매하세요 👇</p>
+                                    <span class="text-pink-500 font-medium block text-xs">#봄신상 #데일리룩 #오운완</span>
+                                </div>
+                                <!-- 하단 고정 핑크 버튼 -->
+                                <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-white via-white to-transparent pt-10">
+                                    <button class="w-full bg-pink-500 hover:bg-pink-600 text-white py-3 rounded-xl font-bold shadow-lg transition-colors flex items-center justify-center gap-2">
+                                        <span class="text-lg">💳</span> 링크 열고 결제하기
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -552,33 +525,36 @@
                     </div>
                 </div>
 
-                <!-- 5. 온라인 결제 (PG) (복구) -->
+                <!-- 5. 온라인 결제 (PG) -->
                 <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
                     <div class="flex-1 order-2 md:order-1 text-center md:text-left fade-in">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-800 font-bold text-xs mb-4">
-                            <span class="w-2 h-2 rounded-full bg-gray-600"></span> 독립 쇼핑몰 연동
+                        <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-800 font-bold text-xs">
+                                <span class="w-2 h-2 rounded-full bg-gray-600"></span> 독립 쇼핑몰 연동
+                            </div>
                         </div>
                         <h3 class="text-3xl font-black text-gray-900 mb-6">내 쇼핑몰엔 <span class="text-gray-800">온라인 결제(PG)</span></h3>
-                        <p class="text-lg text-gray-600 mb-8 leading-relaxed">자사몰(카페24, 아임웹 등)에 전용 결제창을 연동합니다.<br>신용카드, 계좌이체 등 고객이 원하는 모든 수단으로 결제 허들을 낮추세요.</p>
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed">자사몰에 전용 결제창을 연동합니다.<br>신용카드, 계좌이체 등 고객이 원하는 모든 수단으로 결제 허들을 낮추세요.</p>
                     </div>
                     <div class="flex-1 order-1 md:order-2 flex justify-center fade-in">
                         <div class="phone-mockup bg-gray-100">
                             <div class="phone-notch"></div>
-                            <div class="p-0 h-full flex flex-col">
-                                <div class="bg-white px-4 pt-14 pb-3 font-bold text-center border-b border-gray-200">결제하기</div>
-                                <div class="p-4 space-y-3 overflow-y-auto">
-                                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200 text-sm">
-                                        <p class="text-gray-500 mb-1">총 결제금액</p>
-                                        <p class="font-black text-xl text-primary-600">89,000원</p>
-                                    </div>
-                                    <p class="font-bold text-sm text-gray-800 pt-2">결제수단 선택</p>
-                                    <div class="bg-white p-4 rounded-xl shadow-sm border-2 border-primary-500 flex flex-col gap-2">
-                                        <div class="flex justify-between items-center">
-                                            <span class="font-bold text-primary-800">신용카드</span>
-                                            <span class="w-4 h-4 rounded-full bg-primary-600 flex items-center justify-center"><div class="w-1.5 h-1.5 bg-white rounded-full"></div></span>
+                            <div class="p-4 pt-16 h-full flex flex-col relative z-10">
+                                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden h-full flex flex-col">
+                                    <div class="bg-gray-800 text-white text-center py-3 font-bold text-sm">안심 결제 서비스</div>
+                                    <div class="p-4 flex-1">
+                                        <p class="text-xs text-gray-500 mb-1">결제 금액</p>
+                                        <p class="text-2xl font-black text-gray-900 mb-6 border-b border-gray-100 pb-4">89,000원</p>
+                                        
+                                        <p class="text-xs font-bold text-gray-700 mb-2">결제 수단 선택</p>
+                                        <div class="grid grid-cols-2 gap-2 mb-4">
+                                            <button class="border-2 border-primary-600 bg-primary-50 text-primary-700 py-2 rounded-lg text-xs font-bold">신용카드</button>
+                                            <button class="border border-gray-200 bg-gray-50 text-gray-600 py-2 rounded-lg text-xs font-bold">계좌이체</button>
                                         </div>
                                     </div>
-                                    <div class="bg-white p-4 rounded-xl border border-gray-200 flex justify-between items-center text-sm text-gray-600">간편결제 <span class="w-4 h-4 rounded-full border border-gray-300"></span></div>
+                                    <div class="p-4 bg-gray-50 border-t border-gray-100 mt-auto">
+                                        <button class="w-full bg-primary-600 text-white py-3 rounded-xl font-bold shadow-md">결제하기</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -621,38 +597,34 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl font-extrabold mb-16 fade-in">복잡한 서류? NO! 4단계 간편 도입</h2>
             <div class="flex flex-col md:flex-row justify-between items-center gap-8 relative fade-in" style="animation-delay: 0.2s;">
-                <!-- 데스크톱용 수평 연결선 -->
                 <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-700 -z-10 transform -translate-y-1/2"></div>
                 
                 <div class="bg-gray-800 p-6 pt-8 rounded-2xl w-full md:w-1/4 border border-gray-700 z-10 relative hover:border-gray-500 transition-colors shadow-xl">
                     <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2 shadow-lg ring-4 ring-gray-900">1</div>
                     <div class="text-3xl mb-4">📝</div>
-                    <h4 class="text-lg font-bold mb-2">서비스 가입신청</h4>
-                    <p class="text-gray-400 text-[13px] leading-relaxed break-keep">1분 만에 끝나는 간단한 온라인 신청서 작성</p>
+                    <h4 class="text-lg font-bold mb-2">상담 신청</h4>
+                    <p class="text-gray-400 text-[13px] leading-relaxed break-keep">맞춤 수수료 안내</p>
                 </div>
                 <div class="text-gray-600 md:hidden">▼</div>
-                
                 <div class="bg-gray-800 p-6 pt-8 rounded-2xl w-full md:w-1/4 border border-gray-700 z-10 relative hover:border-gray-500 transition-colors shadow-xl">
                     <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2 shadow-lg ring-4 ring-gray-900">2</div>
                     <div class="text-3xl mb-4">💬</div>
-                    <h4 class="text-lg font-bold mb-2">상담 및 계약 안내</h4>
-                    <p class="text-gray-400 text-[13px] leading-relaxed break-keep">전문 매니저의 개별 상담 및 맞춤 요금 설계</p>
+                    <h4 class="text-lg font-bold mb-2">계약 및 서류</h4>
+                    <p class="text-gray-400 text-[13px] leading-relaxed break-keep">온라인 간편 접수</p>
                 </div>
                 <div class="text-gray-600 md:hidden">▼</div>
-                
                 <div class="bg-gray-800 p-6 pt-8 rounded-2xl w-full md:w-1/4 border border-gray-700 z-10 relative hover:border-gray-500 transition-colors shadow-xl">
                     <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2 shadow-lg ring-4 ring-gray-900">3</div>
                     <div class="text-3xl mb-4">📁</div>
-                    <h4 class="text-lg font-bold mb-2">서류 제출 및 가입</h4>
-                    <p class="text-gray-400 text-[13px] leading-relaxed break-keep">필요한 기본 서류 접수 후 즉시 전산 심사 등록</p>
+                    <h4 class="text-lg font-bold mb-2">PG 심사 진행</h4>
+                    <p class="text-gray-400 text-[13px] leading-relaxed break-keep">카드사 심사 대행</p>
                 </div>
                 <div class="text-gray-600 md:hidden">▼</div>
-                
                 <div class="bg-gray-800 p-6 pt-8 rounded-2xl w-full md:w-1/4 border border-gray-700 z-10 relative hover:border-gray-500 transition-colors shadow-xl">
                     <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2 shadow-lg ring-4 ring-gray-900">4</div>
                     <div class="text-3xl mb-4">✨</div>
-                    <h4 class="text-lg font-bold mb-2">서비스 이용</h4>
-                    <p class="text-gray-400 text-[13px] leading-relaxed break-keep">모든 절차 완료 후 페이브라운 결제 즉시 개통</p>
+                    <h4 class="text-lg font-bold mb-2">서비스 오픈</h4>
+                    <p class="text-gray-400 text-[13px] leading-relaxed break-keep">즉시 결제 가능</p>
                 </div>
             </div>
         </div>
@@ -780,7 +752,6 @@
     </div>
 </footer>
 
-<!-- 모바일 하단 스티키 바 -->
 <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 p-3 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-50 flex gap-2 pb-5">
     <a href="tel:01095287875" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 py-3.5 rounded-xl font-bold text-center text-sm flex items-center justify-center gap-2 transition">
         📞 전화 상담
@@ -790,13 +761,11 @@
     </button>
 </div>
 
-<!-- PC 플로팅 버튼 -->
 <a href="#contact" id="floatingCta" class="hidden md:flex fixed bottom-6 right-6 bg-primary-600 text-white p-4 rounded-full shadow-2xl hover:bg-primary-700 transition-all duration-300 z-50 items-center justify-center gap-2 font-bold group floating-cta border-2 border-white">
     <span class="text-2xl">💬</span>
     <span class="hidden md:inline-block max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out whitespace-nowrap px-1">무료 견적 받기</span>
 </a>
 
-<!-- 모달 레이아웃 (약관) -->
 <div id="policyModal" class="fixed inset-0 bg-black/60 flex items-center justify-center z-[120] hidden backdrop-blur-sm p-4 animate-detailFadeIn">
     <div class="bg-white rounded-3xl w-full max-w-3xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden border border-gray-100">
         <div class="flex justify-between items-center px-6 py-5 bg-gray-50 border-b border-gray-100">
@@ -810,7 +779,6 @@
     </div>
 </div>
 
-<!-- Formspree 성공 모달 -->
 <div id="successModal" class="fixed inset-0 bg-black/60 flex items-center justify-center z-[110] hidden backdrop-blur-sm p-4 animate-detailFadeIn">
     <div class="bg-white rounded-3xl w-full max-w-md p-8 text-center shadow-2xl border border-gray-100">
         <div class="w-16 h-16 bg-green-50 text-green-600 rounded-full flex items-center justify-center text-3xl mx-auto mb-6 shadow-inner">✓</div>
@@ -822,8 +790,6 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        
-        // 1. 누적 마진 수익 차트 초기화
         let savingsChart;
         const canvasSavings = document.getElementById('savingsChart');
         if (canvasSavings) {
@@ -848,7 +814,6 @@
             });
         }
 
-        // 2. 수수료 계산기 연동
         const slider = document.getElementById('revenueSlider');
         const numberInput = document.getElementById('revenueInput');
         const costTraditionalEl = document.getElementById('costTraditional');
@@ -877,7 +842,6 @@
         if (slider) slider.addEventListener('input', function() { updateCalculator(this.value); });
         if (numberInput) numberInput.addEventListener('input', function() { updateCalculator(this.value); });
 
-        // 3. 정산 프로세스 정기 차트 초기화
         const canvasSettlement = document.getElementById('settlementChart');
         if (canvasSettlement) {
             const ctxSettlement = canvasSettlement.getContext('2d');
@@ -898,11 +862,9 @@
             });
         }
         
-        // 4. 스코프 바인딩 문제 완벽 해결을 위한 DOM 요소 쿼리
         const filterBtns = document.querySelectorAll('.filter-btn');
         const solutionCards = document.querySelectorAll('.solution-card');
 
-        // 5. 필터 버튼 클릭 바인딩
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 if(btn.classList.contains('bg-primary-600')) {
@@ -947,7 +909,6 @@
             });
         });
 
-        // 6. 스코프 체이닝(Closure)을 완벽하게 활용하여 window 객체에 전역 바인딩
         window.toggleSolutionCard = function(element, isHighlighted = false) {
             const isExpanding = !element.classList.contains('is-expanded');
             solutionCards.forEach(card => {
@@ -983,7 +944,6 @@
             }
         };
 
-        // 7. 플로팅 스티키 바 컨트롤
         const floatingCta = document.getElementById('floatingCta');
         let lastScrollTop = 0;
         if (floatingCta) {
@@ -995,7 +955,6 @@
             }, { passive: true });
         }
 
-        // 8. 폼 전송 피드백 및 안내 모달 띄우기 함수
         const leadForm = document.getElementById('leadForm');
         const formLoadingOverlay = document.getElementById('formLoadingOverlay');
         const successModal = document.getElementById('successModal');
@@ -1003,7 +962,6 @@
         function showErrorModal(message) {
             document.getElementById('successTitle').innerText = "전송 실패";
             document.getElementById('successDesc').innerText = message;
-            // 아이콘을 실패용 느낌표(X) 빨간 마크로 실시간 스왑
             document.querySelector('#successModal .w-16').classList.replace('bg-green-50', 'bg-red-50');
             document.querySelector('#successModal .w-16').classList.replace('text-green-600', 'text-red-600');
             document.querySelector('#successModal .w-16').innerText = "!";
@@ -1030,7 +988,6 @@
                     formLoadingOverlay.classList.remove('flex');
 
                     if (response.ok) {
-                        // 성공 상태 복구
                         document.getElementById('successTitle').innerText = "견적 요청이 완료되었습니다!";
                         document.getElementById('successDesc').innerText = "대표님의 비즈니스 정보를 바탕으로 최적의 수수료 조건을 산출하여, 담당 매니저가 신속히 연락드리겠습니다.";
                         document.querySelector('#successModal .w-16').classList.replace('bg-red-50', 'bg-green-50');
@@ -1056,7 +1013,6 @@
         }
     });
 
-    // 9. 약관 보기 모달 컨텐츠 정의
     const termsText = `
         <div class="space-y-4">
             <h4 class="font-extrabold text-gray-900 text-lg">제 1 조 (목적)</h4>
@@ -1065,7 +1021,7 @@
             <ul class="list-disc pl-5 space-y-1">
                 <li><strong>수기결제 서비스:</strong> 단말기 없이 카드번호와 유효기간만을 입력받아 수동으로 신용카드 승인을 요청하는 비대면 결제 시스템을 말합니다.</li>
                 <li><strong>정기결제 서비스:</strong> 가맹점과 약정된 주기에 따라 고객의 신용카드에서 결제 대금이 정기적으로 자동 승인 청구되는 시스템을 뜻합니다.</li>
-                <li><strong>결제 고객:</strong> 가맹점종으로부터 재화 또는 용역을 제공받고 페이브라운 시스템을 통해 카드 승인을 승낙한 이용자를 말합니다.</li>
+                <li><strong>결제 고객:</strong> 가맹점으로부터 재화 또는 용역을 제공받고 페이브라운 시스템을 통해 카드 승인을 승낙한 이용자를 말합니다.</li>
             </ul>
         </div>
     `;
