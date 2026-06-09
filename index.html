@@ -77,6 +77,12 @@
     .loader { border: 3px solid rgba(255, 255, 255, 0.3); border-radius: 50%; border-top: 3px solid #fff; width: 24px; height: 24px; animation: spin 1s linear infinite; }
     @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     
+    /* 💡 터치 지연 및 중복 클릭 시 먹통 현상 방지 */
+    .filter-btn, .solution-card {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
     /* 무한 롤링 애니메이션 (추가) */
     @keyframes scroll {
         0% { transform: translateX(0); }
@@ -1018,11 +1024,18 @@
         if (slider) slider.addEventListener('input', function() { updateCalculator(this.value); });
         if (numberInput) numberInput.addEventListener('input', function() { updateCalculator(this.value); });
 
+        // 💡 다중/빠른 클릭 시 UI 꼬임 및 먹통(스크롤 충돌) 방지를 위한 잠금 장치
+        let uiLock = false;
+
         const filterBtns = document.querySelectorAll('.filter-btn');
         const solutionCards = document.querySelectorAll('.solution-card');
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
+                if (uiLock) return; // 실행 중일 땐 추가 클릭 무시
+                uiLock = true;
+                setTimeout(() => uiLock = false, 400); // 0.4초 후 잠금 해제
+
                 if(btn.classList.contains('bg-primary-600')) {
                     btn.classList.remove('bg-primary-600', 'text-white', 'border-primary-600');
                     btn.classList.add('bg-white', 'text-gray-600', 'border-gray-300');
@@ -1047,6 +1060,7 @@
                 btn.classList.add('bg-primary-600', 'text-white', 'border-primary-600');
 
                 const filter = btn.dataset.filter;
+                let targetCard = null;
                 
                 solutionCards.forEach(card => {
                     if (card.dataset.category === filter) {
@@ -1054,24 +1068,34 @@
                         const ringClass = card.dataset.category === 'reserve' ? 'ring-primary-800' : 'ring-primary-400';
                         card.classList.add('is-expanded', 'md:col-span-2', 'lg:col-span-2', 'ring-2', ringClass, 'shadow-xl');
                         card.querySelector('.solution-details').classList.remove('hidden');
-                        setTimeout(() => {
-                            const y = card.getBoundingClientRect().top + window.pageYOffset - 120;
-                            window.scrollTo({top: y, behavior: 'smooth'});
-                        }, 100);
+                        targetCard = card;
                     } else {
                         card.classList.add('card-dimmed');
                     }
                 });
+
+                if (targetCard) {
+                    setTimeout(() => {
+                        const y = targetCard.getBoundingClientRect().top + window.pageYOffset - 100;
+                        window.scrollTo({top: y, behavior: 'smooth'});
+                    }, 50);
+                }
             });
         });
 
         window.toggleSolutionCard = function(element, isHighlighted = false) {
+            if (uiLock) return; // 실행 중일 땐 추가 클릭 무시
+            uiLock = true;
+            setTimeout(() => uiLock = false, 400); // 0.4초 후 잠금 해제
+
             const isExpanding = !element.classList.contains('is-expanded');
+            
             solutionCards.forEach(card => {
                 card.classList.remove('is-expanded', 'md:col-span-2', 'lg:col-span-2', 'ring-2', 'ring-primary-400', 'shadow-xl', 'ring-primary-800');
                 card.querySelector('.solution-details').classList.add('hidden');
                 card.classList.remove('card-dimmed');
             });
+            
             filterBtns.forEach(b => {
                 b.classList.remove('bg-primary-600', 'text-white', 'border-primary-600');
                 b.classList.add('bg-white', 'text-gray-600', 'border-gray-300');
@@ -1080,7 +1104,7 @@
             if (isExpanding) {
                 const ringClass = isHighlighted ? 'ring-primary-800' : 'ring-primary-400';
                 element.classList.add('is-expanded', 'md:col-span-2', 'lg:col-span-2', 'ring-2', ringClass, 'shadow-xl');
-                element.querySelector('.solution-details').remove('hidden');
+                element.querySelector('.solution-details').classList.remove('hidden');
                 
                 const category = element.dataset.category;
                 const matchedBtn = Array.from(filterBtns).find(btn => btn.dataset.filter === category);
@@ -1094,9 +1118,9 @@
                 });
                 
                 setTimeout(() => {
-                    const y = element.getBoundingClientRect().top + window.pageYOffset - 120;
+                    const y = element.getBoundingClientRect().top + window.pageYOffset - 100;
                     window.scrollTo({top: y, behavior: 'smooth'});
-                }, 100);
+                }, 50);
             }
         };
 
