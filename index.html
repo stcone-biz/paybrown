@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 💡 iOS Safari 전화번호 자동 파란색 링크 변환 방지 -->
+<meta name="format-detection" content="telephone=no">
 <!-- SEO 및 검색 엔진 최적화 태그 -->
 <meta name="description" content="가입비, 연회비 평생 0원! 업계 최저 수수료 0.9% 페이브라운 통합 결제 솔루션. 수기결제, 알림톡, 정기결제, 링크결제를 지금 바로 도입하세요.">
 <meta name="keywords" content="페이브라운, 결제대행, 수기결제, 알림톡결제, 정기결제, 링크결제, PG사, 결제수수료">
@@ -52,7 +54,8 @@
         background-color: #FAF8F5;
         color: #111827;
         overflow-x: hidden;
-        padding-bottom: 70px; /* 모바일 하단 스티키 바 영역 */
+        /* 💡 모바일 하단 스티키 바 영역 넉넉하게 확장 (70px -> 90px) */
+        padding-bottom: 90px; 
         -webkit-font-smoothing: antialiased;
     }
     @media (min-width: 768px) { body { padding-bottom: 0; } }
@@ -183,9 +186,8 @@
         </div>
     </section>
 
-    <!-- 💡 [수정] 무한 롤링 결제 수단 배너 (폭 축소 & 브랜드 로고 UI 적용) -->
+    <!-- 💡 무한 롤링 결제 수단 배너 (폭 축소 & 브랜드 로고 UI 적용) -->
     <div class="bg-white border-y border-gray-100 py-6 mb-12 fade-in shadow-sm">
-        <!-- 폭을 max-w-6xl로 묶어 너무 넓게 퍼지지 않도록 안정감 부여 -->
         <div class="max-w-6xl mx-auto overflow-hidden relative flex items-center">
             <div class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
             <div class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
