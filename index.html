@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- SEO 및 검색 엔진 최적화 태그 -->
 <meta name="description" content="가입비, 연회비 평생 0원! 업계 최저 수수료 0.9% 페이브라운 통합 결제 솔루션. 수기결제, 알림톡, 정기결제, 링크결제를 지금 바로 도입하세요.">
 <meta name="keywords" content="페이브라운, 결제대행, 수기결제, 알림톡결제, 정기결제, 링크결제, PG사, 결제수수료">
 <meta name="author" content="에스티씨원 (STC one)">
+<!-- Open Graph 태그 (카카오톡, 페이스북 공유 시 썸네일/제목) -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="페이브라운 - 수수료 0.9% 통합 결제 솔루션">
 <meta property="og:description" content="가입비/연회비 평생 면제! 수기결제부터 알림톡, 쇼핑몰 결제까지 한 번에.">
@@ -74,10 +76,10 @@
 
 <nav class="bg-white sticky top-0 z-50 border-b border-gray-100 shadow-sm" aria-label="메인 네비게이션">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
-            <!-- 브랜딩 로고 (영어 파일명으로 변경하여 GitHub Pages에서 완벽하게 로드) -->
-            <a href="#" class="flex items-center transition hover:opacity-80" aria-label="페이브라운 홈으로 이동">
-                <img src="logo.png" alt="Pay Brown 로고" class="h-10 md:h-12 w-auto object-contain">
+        <div class="flex justify-between items-center h-20 md:h-24">
+            <!-- 브랜딩 로고 (안전한 사이즈로 조정) -->
+            <a href="#" class="flex items-center transition hover:opacity-80 py-2" aria-label="페이브라운 홈으로 이동">
+                <img src="logo.png" alt="Pay Brown 로고" class="h-10 md:h-14 lg:h-16 w-auto object-contain">
             </a>
             <div class="hidden md:flex space-x-8">
                 <button onclick="document.getElementById('simulator').scrollIntoView({behavior:'smooth'})" class="text-gray-600 hover:text-primary-600 font-semibold transition focus:outline-none">수수료 시뮬레이터</button>
@@ -92,54 +94,58 @@
 </nav>
 
 <main>
-    <section class="pt-16 md:pt-20 pb-20 md:pb-24 px-4 bg-gradient-to-b from-[#FAF8F5] to-white overflow-hidden relative">
-        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 mt-4 z-10 w-full text-center fade-in">
-            <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-red-50 text-red-600 font-black text-sm border-2 border-red-100 shadow-sm animate-pulse">
-                <span class="text-lg">💳</span> 전 결제 수단 무이자 할부 100% 지원!
+    <section class="pt-8 md:pt-16 pb-20 md:pb-24 px-4 bg-gradient-to-b from-[#FAF8F5] to-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto">
+            <!-- 무이자 할부 배지 우측 정렬 (잘림 방지용 안전한 레이아웃 구조 적용) -->
+            <div class="flex justify-end mb-8 md:mb-12 fade-in">
+                <div class="inline-flex items-center gap-1.5 md:gap-2 px-4 py-1.5 md:py-2 rounded-full bg-red-50 text-red-600 font-black text-xs md:text-sm border border-red-100 shadow-sm animate-pulse">
+                    <span class="text-sm md:text-base flex-shrink-0">💳</span>
+                    <span class="break-keep">전 카드사 무이자 할부 행사 지원</span>
+                </div>
             </div>
-        </div>
 
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 mt-12">
-            <div class="flex-1 text-center lg:text-left fade-in">
-                <div class="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-700 font-bold text-sm mb-6 border border-primary-100">
-                    가입비 · 연회비 · 관리비 평생 면제
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="flex-1 text-center lg:text-left fade-in">
+                    <div class="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-700 font-bold text-sm mb-6 border border-primary-100">
+                        가입비 · 연회비 · 관리비 평생 면제
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 lg:mb-8 leading-tight tracking-tight">
+                        숨겨진 비용 0원,<br>사장님은 <span class="text-primary-600">'결제'</span>만 신경 쓰세요.
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 md:mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        업계 최저 수수료로 지금 바로 시작하는 통합 결제 솔루션. 복잡한 가입 절차 없이 페이브라운 하나로 모든 준비가 끝납니다.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <button onclick="document.getElementById('simulator').scrollIntoView({behavior:'smooth'})" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition shadow-lg shadow-primary-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-600">
+                            나의 월 절감액 계산해보기
+                        </button>
+                        <button onclick="document.getElementById('service-details').scrollIntoView({behavior:'smooth'})" class="bg-white hover:bg-gray-50 text-gray-800 border border-gray-200 px-8 py-4 rounded-xl font-bold text-lg transition shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200">
+                            솔루션 도입 사례 보기
+                        </button>
+                    </div>
                 </div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 lg:mb-8 leading-tight tracking-tight">
-                    숨겨진 비용 0원,<br>사장님은 <span class="text-primary-600">'결제'</span>만 신경 쓰세요.
-                </h1>
-                <p class="text-lg md:text-xl text-gray-600 mb-8 md:mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                    업계 최저 수수료로 지금 바로 시작하는 통합 결제 솔루션. 복잡한 가입 절차 없이 페이브라운 하나로 모든 준비가 끝납니다.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                    <button onclick="document.getElementById('simulator').scrollIntoView({behavior:'smooth'})" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition shadow-lg shadow-primary-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-600">
-                        나의 월 절감액 계산해보기
-                    </button>
-                    <button onclick="document.getElementById('service-details').scrollIntoView({behavior:'smooth'})" class="bg-white hover:bg-gray-50 text-gray-800 border border-gray-200 px-8 py-4 rounded-xl font-bold text-lg transition shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200">
-                        솔루션 도입 사례 보기
-                    </button>
-                </div>
-            </div>
-            
-            <div class="flex-1 hidden md:block fade-in" style="animation-delay: 0.3s;">
-                <div class="relative w-full max-w-lg mx-auto">
-                    <div class="absolute inset-0 bg-primary-400 blur-[80px] opacity-20 rounded-full"></div>
-                    <div class="relative bg-white border border-gray-100 rounded-3xl shadow-2xl p-6 transform rotate-2 hover:rotate-0 transition duration-500">
-                        <div class="flex items-center justify-between mb-6">
-                            <div class="text-lg font-bold">실시간 매출 정산현황</div>
-                            <div class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-md font-bold">D+3 입금완료</div>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="h-16 bg-gray-50 rounded-xl flex items-center px-4 justify-between">
-                                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center text-sm">💳</div><span class="font-bold text-gray-700">수기결제</span></div>
-                                <span class="font-bold">4,500,000원</span>
+                
+                <div class="flex-1 hidden md:block fade-in" style="animation-delay: 0.3s;">
+                    <div class="relative w-full max-w-lg mx-auto">
+                        <div class="absolute inset-0 bg-primary-400 blur-[80px] opacity-20 rounded-full"></div>
+                        <div class="relative bg-white border border-gray-100 rounded-3xl shadow-2xl p-6 transform rotate-2 hover:rotate-0 transition duration-500">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="text-lg font-bold">실시간 매출 정산현황</div>
+                                <div class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-md font-bold">D+3 입금완료</div>
                             </div>
-                            <div class="h-16 bg-gray-50 rounded-xl flex items-center px-4 justify-between">
-                                <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center text-sm">📱</div><span class="font-bold text-gray-700">알림톡결제</span></div>
-                                <span class="font-bold">2,150,000원</span>
-                            </div>
-                            <div class="h-16 bg-primary-50 border border-primary-100 rounded-xl flex items-center px-4 justify-between">
-                                <span class="font-bold text-primary-800">오늘 확보된 현금</span>
-                                <span class="text-xl font-black text-primary-600">6,650,000원</span>
+                            <div class="space-y-4">
+                                <div class="h-16 bg-gray-50 rounded-xl flex items-center px-4 justify-between">
+                                    <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center text-sm">💳</div><span class="font-bold text-gray-700">수기결제</span></div>
+                                    <span class="font-bold">4,500,000원</span>
+                                </div>
+                                <div class="h-16 bg-gray-50 rounded-xl flex items-center px-4 justify-between">
+                                    <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center text-sm">📱</div><span class="font-bold text-gray-700">알림톡결제</span></div>
+                                    <span class="font-bold">2,150,000원</span>
+                                </div>
+                                <div class="h-16 bg-primary-50 border border-primary-100 rounded-xl flex items-center px-4 justify-between">
+                                    <span class="font-bold text-primary-800">오늘 확보된 현금</span>
+                                    <span class="text-xl font-black text-primary-600">6,650,000원</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -242,6 +248,7 @@
                 <p class="text-gray-500 text-lg">대표님의 업종을 선택하시면 딱 맞는 결제 솔루션을 추천해 드립니다.</p>
             </div>
 
+            <!-- 필터링 버튼 -->
             <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-12 fade-in animate-detailFadeIn">
                 <button class="filter-btn text-gray-600 border-gray-300 hover:border-primary-600 hover:text-primary-600 px-4 py-2 md:px-6 md:py-2.5 rounded-full border text-xs md:text-sm font-bold transition-colors bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-400" data-filter="reserve">화물 · 청소 · 예약</button>
                 <button class="filter-btn text-gray-600 border-gray-300 hover:border-primary-600 hover:text-primary-600 px-4 py-2 md:px-6 md:py-2.5 rounded-full border text-xs md:text-sm font-bold transition-colors bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-400" data-filter="tm">방문판매 · TM</button>
@@ -251,6 +258,7 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-start">
+                <!-- 1. 알림톡 결제 -->
                 <div tabindex="0" class="solution-card cursor-pointer group bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 fade-in flex flex-col relative focus:outline-none focus:ring-2 focus:ring-primary-400" data-category="reserve" onclick="toggleSolutionCard(this)" onkeypress="if(event.key==='Enter') toggleSolutionCard(this)">
                     <div class="absolute -top-3 -right-3 bg-gray-900 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md z-10 border border-gray-700">BEST</div>
                     
@@ -275,6 +283,7 @@
                     </div>
                 </div>
 
+                <!-- 2. 수기 결제 -->
                 <div tabindex="0" class="solution-card cursor-pointer group bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 fade-in flex flex-col relative focus:outline-none focus:ring-2 focus:ring-primary-400" data-category="tm" onclick="toggleSolutionCard(this)" onkeypress="if(event.key==='Enter') toggleSolutionCard(this)">
                     <div class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-4 text-xl">💳</div>
                     <h3 class="text-lg font-bold text-gray-900 mb-2">수기 결제</h3>
@@ -297,6 +306,7 @@
                     </div>
                 </div>
 
+                <!-- 3. 정기 결제 -->
                 <div tabindex="0" class="solution-card cursor-pointer group bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 fade-in flex flex-col relative focus:outline-none focus:ring-2 focus:ring-primary-400" data-category="sub" onclick="toggleSolutionCard(this)" onkeypress="if(event.key==='Enter') toggleSolutionCard(this)">
                     <div class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-4 text-xl">🔄</div>
                     <h3 class="text-lg font-bold text-gray-900 mb-2">정기 결제</h3>
@@ -319,6 +329,7 @@
                     </div>
                 </div>
 
+                <!-- 4. 링크 결제 -->
                 <div tabindex="0" class="solution-card cursor-pointer group bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 fade-in flex flex-col relative focus:outline-none focus:ring-2 focus:ring-primary-400" data-category="sns" onclick="toggleSolutionCard(this)" onkeypress="if(event.key==='Enter') toggleSolutionCard(this)">
                     <div class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-4 text-xl">🔗</div>
                     <h3 class="text-lg font-bold text-gray-900 mb-2">링크 결제</h3>
@@ -341,6 +352,7 @@
                     </div>
                 </div>
 
+                <!-- 5. 온라인 결제 (PG) -->
                 <div tabindex="0" class="solution-card cursor-pointer group bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 fade-in flex flex-col relative focus:outline-none focus:ring-2 focus:ring-primary-400" data-category="pg" onclick="toggleSolutionCard(this)" onkeypress="if(event.key==='Enter') toggleSolutionCard(this)">
                     <div class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-4 text-xl">🌐</div>
                     <h3 class="text-lg font-bold text-gray-900 mb-2">온라인 결제(PG)</h3>
@@ -379,6 +391,7 @@
             </div>
 
             <div class="space-y-32">
+                <!-- 1. 알림톡 결제 -->
                 <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
                     <div class="flex-1 order-2 md:order-1 text-center md:text-left fade-in">
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-50 text-primary-700 font-bold text-xs mb-4">
@@ -415,6 +428,7 @@
                     </div>
                 </div>
 
+                <!-- 2. 수기 결제 -->
                 <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
                     <div class="flex-1 flex justify-center fade-in">
                         <div class="phone-mockup bg-gray-50">
@@ -452,6 +466,7 @@
                     </div>
                 </div>
 
+                <!-- 3. 정기 결제 -->
                 <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
                     <div class="flex-1 order-2 md:order-1 text-center md:text-left fade-in">
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 font-bold text-xs mb-4">
@@ -477,6 +492,7 @@
                     </div>
                 </div>
 
+                <!-- 4. 링크 결제 -->
                 <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
                     <div class="flex-1 flex justify-center fade-in">
                         <div class="phone-mockup bg-white">
@@ -510,6 +526,7 @@
                     </div>
                 </div>
 
+                <!-- 5. 온라인 결제 (PG) -->
                 <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
                     <div class="flex-1 order-2 md:order-1 text-center md:text-left fade-in">
                         <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
@@ -674,6 +691,7 @@
                 </div>
                 
                 <form id="leadForm" action="https://formspree.io/f/xeedryvl" method="POST">
+                    <!-- 봇 스팸 방지 필드 (Honeypot) - 화면에 보이지 않음 -->
                     <input type="text" name="_gotcha" style="display:none" aria-hidden="true">
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -717,7 +735,7 @@
         <div class="mb-8 inline-block">
             <a href="#" aria-label="페이브라운 홈으로 이동" class="transition hover:opacity-80 block">
                 <!-- 실제 서버용 푸터 이미지 로고 (화이트 반전 적용) -->
-                <img src="logo.png" alt="Pay Brown 로고" class="h-10 md:h-12 w-auto object-contain brightness-0 invert opacity-90 hover:opacity-100 transition">
+                <img src="logo.png" alt="Pay Brown 로고" class="h-14 md:h-20 w-auto object-contain brightness-0 invert opacity-90 hover:opacity-100 transition">
             </a>
         </div>
         <p class="mb-2">스마트 페이먼트 파트너 | 에스티씨원 (STC one)</p>
@@ -731,6 +749,7 @@
     </div>
 </footer>
 
+<!-- 모바일 전용 하단 스티키 바 -->
 <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 p-3 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-50 flex gap-2 pb-5">
     <a href="tel:01095287875" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 py-3.5 rounded-xl font-bold text-center text-sm flex items-center justify-center gap-2 transition focus:outline-none focus:ring-2 focus:ring-gray-300">
         📞 전화 상담
@@ -740,6 +759,7 @@
     </button>
 </div>
 
+<!-- PC 전용 우측 하단 플로팅 챗 버튼 -->
 <a href="#contact" id="floatingCta" class="hidden md:flex fixed bottom-6 right-6 bg-primary-600 text-white p-4 rounded-full shadow-2xl hover:bg-primary-700 transition-all duration-300 z-50 items-center justify-center gap-2 font-bold group floating-cta border-2 border-white focus:outline-none focus:ring-4 focus:ring-primary-300">
     <span class="text-2xl" aria-hidden="true">💬</span>
     <span class="hidden md:inline-block max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out whitespace-nowrap px-1">무료 견적 받기</span>
