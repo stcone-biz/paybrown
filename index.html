@@ -1185,6 +1185,11 @@ wcs_do();
                         document.querySelector('#successModal .w-20').classList.replace('text-red-600', 'text-green-600');
                         document.querySelector('#successModal .w-20').innerText = "✓";
                         successModal.classList.remove('hidden');
+                      if (window.wcs) {
+                          var _conv = {};
+                          _conv.type = "lead";
+                          wcs.trans(_conv);
+                      }
                         leadForm.reset();
                     } else {
                         response.json().then(data => {
